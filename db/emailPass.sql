@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS emailPass_db;
+
+CREATE DATABASE emailPass_db;
