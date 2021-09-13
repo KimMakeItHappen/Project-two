@@ -25,6 +25,8 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
     "express-session": "^1.17.2",
+    "feather-icons": "^4.28.0",
+    "material-design-icons": "^3.0.1",
     "mysql2": "^2.3.0",
     "passport": "^0.4.1",
     "sequelize": "^6.6.5"
