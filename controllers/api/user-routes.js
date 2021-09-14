@@ -15,12 +15,12 @@ router.get('/:id', (req, res) => {
                         'content',
                     ]
                 },
-
                 {
                     model: Comment,
                     attributes: [
                         'id', 
-                        'content', 'created_at'
+                        'content', 
+                        'created_at'
                     ],
                     include: {
                         model: Jobposting,
