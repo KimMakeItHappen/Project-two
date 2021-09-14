@@ -1,15 +1,17 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class jobposting extends Model {}
-jobposting.init(
+class Jobposting extends Model {}
+
+Jobposting.init(
     {
         id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             primaryKey: true,
             autoIncrement: true,
         },
-        job_title: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -22,9 +24,8 @@ jobposting.init(
             }
         },
         content: {
-            type: DataTypes.TEXT,
-                allowNull: false
-            
+            type: DataTypes.STRING,
+                allowNull: false 
         }
     },
     {
@@ -35,4 +36,4 @@ jobposting.init(
     }    
 );
 
-module.exports = jobposting;
+module.exports = Jobposting;
