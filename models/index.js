@@ -1,35 +1,35 @@
-const user = require('./user');
-const comments = require('./comments');
-const post = require('./jobposting');
-const jobposting = require('./jobposting');
+const User = require('./User');
+const Comments = require('./Comment');
+const Jobposting = require('./Jobposting');
+const Jobposting = require('./Jobposting');
 
-user.hasMany(jobposting, {
-    foreignKey: 'user_id'
+User.hasMany(Jobposting, {
+    foreignKey: 'User_id'
 });
 
-user.hasMany(comments, {
-    foreignKey: 'user_id',
+User.hasMany(Comments, {
+    foreignKey: 'User_id',
     onDelete: "cascade"
 });
 
-jobposting.belongsTo(user, {
-    foreignKey: 'user_id',
+Jobposting.belongsTo(User, {
+    foreignKey: 'User_id',
     onDelete: "cascade"
 });
 
-jobposting.hasMany(comments, {
+Jobposting.hasMany(Comments, {
     foreignKey: 'job_id',
     onDelete: "cascade"
 });
 
-comments.belongsTo(jobposting, {
+Comments.belongsTo(Jobposting, {
     foreignKey: 'job_id',
     onDelete: "cascade"
 });
 
-comments.belongsTo(user, {
-    foreignKey: 'user_id',
+Comments.belongsTo(User, {
+    foreignKey: 'User_id',
     onDelete: "cascade"
 });
 
-module.exports = { user, post, comments };
+module.exports = { User, Jobposting, Comments };
