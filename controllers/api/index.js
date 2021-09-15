@@ -5,5 +5,5 @@ const searchRoutes = require('./search');
 
 router.use('/users', userRoutes);
 router.use('/comments', commentRoutes);
-router.use('./search', searchRoutes);
+router.use('/search', searchRoutes);
 module.exports = router;
