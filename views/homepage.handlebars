@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
-      rel="stylesheet">
-
-    <title>iWork</title>
-</head>
+{{!-- 
+{{#each  as || }}
+{{/each}} --}}
 <body>
-    <h4><span class="material-icons">search</span>Find the job!</h4>
+  <div class="flex-column justify-space-around">
+    <header class="display-flex justify-space-between align-center p-2">
+      <h1>
+        <a href="/">iWork</a>
+      </h1>
 
+        <h4><span class="material-icons justify-space-between align-center">search</span>Find the job!</h4>
 
-    <div class="navbar navbar-light" style="background-color: #e3f2fd;">
-        <a href="./homepage.html" class="navbar__link">
+        <div class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <a href="./main" class="navbar__link">
             <span class="material-icons">home</span>Home
         </a>
         <a href="./postingjobs.html" class="navbar__link">
@@ -27,19 +22,36 @@
                 <span class="material-icons">notifications</span>notifications
             </a>
         </div>
-        <a href="signin.html" class="navbar__link">
-            <span class="material-icons">account_circle</span>Login/Sign Up
+        <a href="#" type="button" id="login-button" class="navbar__link">
+            <span class="material-icons">account_circle</span>Login
         </a>
     </div>
-
+    
     <label for="site-search"></label>
     <input type="search" placeholder="what" id="site-search" name="q"
        aria-label="Search through site content">
     <input type="search" placeholder="where" id="site-search" name="q"
        aria-label="Search through site content">
-    <button type="button" class="btn btn-primary">Find Jobs</button>
+    <button type="button" id="search-button" class="btn btn-primary">Search Jobs</button>
+   
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+   {{!-- jobs in table --}}
+   <div class="container">
+    <div class="card w-75">
+      <div class="card-body">
+        <h5 class="card-title">{{this.title}}</h5>
+        <p class="card-text">{{this.content}}.</p>
+        <a href="#" type="button" id="login-button" class="btn btn-primary">Apply</a>
+      </div>
+    </div>
+</div>
 
+
+
+  <!-- Render script for logged in users only -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/homepage.js"></script>
 </body>
+
 </html>
