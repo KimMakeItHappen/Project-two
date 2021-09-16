@@ -38,7 +38,8 @@ router.get('/:id', (req, res) => {
                 res.status(404).json({ message: 'No user found with this id' });
                 return;
             }
-            res.json(dbUserData);
+            //res.json(dbUserData);
+            //res.render("component", { dataname: res.json(data)})
         })
         .catch(err => {
             console.log(err);
@@ -64,8 +65,10 @@ router.post('/', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+
 // This is the login route
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
     User.findOne({
         where: {
             username: req.body.username
