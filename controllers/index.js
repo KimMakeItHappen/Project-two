@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const api = require('./api');
+const homeRoutes = require('./home-routes');
 
-router.get('/', async (req, res) => {
 
-      // Pass serialized data and session flag into template
-      res.render('homepage');
-  });
+
+router.use('/', homeRoutes)
+
 router.use('/api', api);
 module.exports = router;

@@ -7,7 +7,7 @@ router.get ('/', async (req, res) => {
     try{
     const adzuna = await axios.get (
         // `https://api.adzuna.com/v1/api/jobs/us/search/1?${APP_ID}&${APP_KEY}&results_per_page=10&what=web%20development&where=pittsburgh`
-        `https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=a2be2459&app_key=52a262732067a3faffca502e7e7c105d`
+        `https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${APP_ID}&app_key=${AP}`
 
     );
     console.log(adzuna.data)
